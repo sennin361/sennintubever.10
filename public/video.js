@@ -1,6 +1,6 @@
 // src/video.js
 
-const apiKey = 'YOUR_API_KEY'; // ← 自分のYouTube Data API キーに差し替えてください
+const apiKey = 'AIzaSyAtA0EA9gDWLuq7WHuPU2Sc_oLzLA3FKA8'; // ← 自分のYouTube Data API キーに差し替えてください
 const params = new URLSearchParams(window.location.search);
 const videoId = params.get('videoId');
 
