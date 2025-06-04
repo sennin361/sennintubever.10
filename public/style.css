@@ -1,0 +1,137 @@
+/* src/style.css */
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+h1, h2 {
+  color: #222;
+}
+
+/* 動画一覧レイアウト */
+.video-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.video-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(50% - 0.5em);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+}
+
+.video-item:hover {
+  transform: scale(1.02);
+}
+
+.thumbnail {
+  width: 100%;
+  display: block;
+}
+
+.video-info {
+  padding: 0.5em 1em;
+}
+
+.video-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  font-size: 0.85em;
+  color: #777;
+}
+
+.meta img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+
+/* 再生ページ用レイアウト */
+.video-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.main-video {
+  background: #fff;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-frame {
+  width: 100%;
+  height: 360px;
+  border: none;
+  border-radius: 6px;
+}
+
+.channel-meta {
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.channel-meta img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.channel-meta > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-small {
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* 関連動画エリア */
+.related-videos {
+  margin-top: 2em;
+}
+
+.related-videos .video-item {
+  width: 100%;
+  display: flex;
+  gap: 1em;
+}
+
+.related-videos .thumbnail {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.related-videos .video-info {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
