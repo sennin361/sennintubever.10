@@ -1,0 +1,33 @@
+<!-- src/video.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>仙人Tube - 再生ページ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container video-layout">
+    <div class="main-video">
+      <iframe id="player"
+              class="video-frame"
+              allowfullscreen>
+      </iframe>
+
+      <h2 id="videoTitle"></h2>
+
+      <div class="channel-meta">
+        <img id="channelIcon" alt="チャンネルアイコン" />
+        <div>
+          <div id="channelName"></div>
+          <div id="viewCount" class="meta-small"></div>
+        </div>
+      </div>
+
+      <div class="related-videos" id="related"></div>
+    </div>
+  </div>
+
+  <script src="video.js"></script>
+</body>
+</html>
