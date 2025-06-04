@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>仙人Tube - トップページ</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+  <div class="container">
+    <h1>仙人Tube</h1>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="動画を検索..." />
+      <button id="searchButton">検索</button>
+    </div>
+
+    <div id="videoList" class="video-list">
+      <!-- 動画のサムネイルがここに表示されます -->
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+  <script>
+    // PWA service worker 登録
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('✅ ServiceWorker登録成功:', reg.scope))
+        .catch(err => console.warn('❌ ServiceWorker登録失敗:', err));
+    }
+  </script>
+</body>
+</html>
