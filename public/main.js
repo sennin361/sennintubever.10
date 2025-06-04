@@ -1,6 +1,6 @@
 // src/main.js
 
-const apiKey = 'YOUR_API_KEY'; // ← 自分のYouTube Data API v3キーを入力
+const apiKey = 'AIzaSyAtA0EA9gDWLuq7WHuPU2Sc_oLzLA3FKA8'; // ← 自分のYouTube Data API v3キーを入力
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const videoList = document.getElementById('videoList');
@@ -51,4 +51,10 @@ async function fetchVideos(query) {
     console.error('動画取得エラー:', err);
     videoList.innerHTML = '<p>動画を取得できませんでした。</p>';
   }
+}
+// main.js の末尾に追記
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(() => console.log('✅ Service Worker 登録完了'))
+    .catch(err => console.error('❌ Service Worker 登録失敗', err));
 }
