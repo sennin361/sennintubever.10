@@ -3,33 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>仙人Tube - トップページ</title>
+  <title>仙人Tube</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="favicon.ico" />
+  <meta name="theme-color" content="#000000" />
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>仙人Tube</h1>
-
-    <div class="search-bar">
+    <div class="search-box">
       <input type="text" id="searchInput" placeholder="動画を検索..." />
       <button id="searchButton">検索</button>
     </div>
+  </header>
 
-    <div id="videoList" class="video-list">
-      <!-- 動画のサムネイルがここに表示されます -->
-    </div>
-  </div>
+  <main>
+    <div id="loading" class="loading hidden">読み込み中...</div>
+    <div id="videoList" class="video-list"></div>
+  </main>
 
-  <!-- JavaScript -->
+  <footer>
+    <p>&copy; 2025 仙人Tube</p>
+  </footer>
+
   <script src="main.js"></script>
   <script>
-    // PWA service worker 登録
+    // PWA登録
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(reg => console.log('✅ ServiceWorker登録成功:', reg.scope))
-        .catch(err => console.warn('❌ ServiceWorker登録失敗:', err));
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('✅ Service Worker registered', reg))
+          .catch(err => console.error('❌ Service Worker failed', err));
+      });
     }
   </script>
 </body>
